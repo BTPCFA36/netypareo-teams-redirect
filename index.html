@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title>Ouverture NetYpareo</title>
 
+  <!-- SDK Teams officiel -->
+  <script src="https://res.cdn.office.net/teams-js/2.19.0/js/MicrosoftTeams.min.js"></script>
+
   <script>
-    function openExternal() {
+    function openNetYpareo() {
       const url = "https://btpcfa-cvdl.ymag.cloud/";
 
-      // Méthode principale
-      const win = window.open(url, "_blank");
-
-      // Fallback si popup bloquée
-      if (!win) {
-        window.location.href = url;
+      // méthode officielle Teams
+      if (window.microsoftTeams) {
+        microsoftTeams.app.initialize().then(() => {
+          microsoftTeams.app.openLink(url);
+        });
+      } else {
+        // fallback navigateur normal
+        window.open(url, "_blank");
       }
     }
 
-    // Auto ouverture
-    window.onload = openExternal;
+    window.onload = openNetYpareo;
   </script>
 
   <style>
@@ -28,24 +32,18 @@
       padding-top: 40px;
       background-color: #f3f2f1;
     }
-
-    button {
-      padding: 12px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
   </style>
 
 </head>
 <body>
 
-  <h2>Ouverture de NetYpareo…</h2>
+<h2>Ouverture de NetYpareo…</h2>
 
-  <p>Si rien ne se passe, cliquez ci-dessous :</p>
+<p>Si rien ne se passe :</p>
 
-  <button onclick="openExternal()">
-    Ouvrir NetYpareo
-  </button>
+<button onclick="openNetYpareo()">
+  Ouvrir NetYpareo
+</button>
 
 </body>
 </html>
