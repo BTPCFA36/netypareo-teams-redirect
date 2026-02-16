@@ -1,100 +1,177 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>NetYpareo – BTP CFA CVDL</title>
 
 <script src="https://res.cdn.office.net/teams-js/2.19.0/js/MicrosoftTeams.min.js"></script>
 
 <script>
+
 function openNetYpareo() {
+
     const url = "https://btpcfa-cvdl.ymag.cloud/";
 
     if (window.microsoftTeams) {
+
         microsoftTeams.app.initialize().then(() => {
             microsoftTeams.app.openLink(url);
         });
+
     } else {
+
         window.open(url, "_blank");
+
     }
+
 }
 
 window.onload = openNetYpareo;
+
 </script>
 
 <style>
 
-body {
+html, body {
+
+    height: 100%;
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #f4f4f4 0%, #e6e6e6 100%);
+
 }
 
-/* Header */
+/* Structure globale */
+
+.page {
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* Header blanc */
+
 .header {
+
     background-color: #ffffff;
     padding: 20px 0;
     text-align: center;
     border-bottom: 4px solid #ffcc00;
+
 }
 
 .header img {
+
     max-width: 600px;
     width: 90%;
     height: auto;
+
+}
+
+/* Zone grise principale */
+
+.main {
+
+    flex: 1;
+
+    background: linear-gradient(
+        180deg,
+        #f4f4f4 0%,
+        #e9e9e9 50%,
+        #e2e2e2 100%
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 /* Container */
+
 .container {
-    text-align: center;
-    padding: 50px 20px;
+
+    padding: 40px 20px;
+
 }
 
-/* Card */
+/* Carte */
+
 .card {
-    display: inline-block;
+
     background: white;
     padding: 40px 50px;
     border-radius: 12px;
+
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+    text-align: center;
+
 }
 
-/* Title */
+/* Titre */
+
 .title {
+
     font-size: 28px;
     font-weight: 600;
     color: #333;
     margin-bottom: 15px;
+
 }
 
-/* Subtitle */
+/* Sous-titre */
+
 .subtitle {
+
     color: #666;
     margin-bottom: 25px;
+
 }
 
-/* Button */
+/* Bouton */
+
 .button {
+
     background: linear-gradient(90deg, #ffcc00, #ffdd33);
+
     border: none;
+
     padding: 14px 30px;
+
     font-size: 16px;
+
     border-radius: 6px;
+
     cursor: pointer;
+
     font-weight: 600;
+
     transition: all 0.2s ease;
+
 }
 
 .button:hover {
+
     transform: translateY(-2px);
+
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
 }
 
 /* Footer */
+
 .footer {
-    margin-top: 40px;
+
+    margin-top: 30px;
     color: #888;
     font-size: 13px;
+
 }
 
 </style>
@@ -103,33 +180,52 @@ body {
 
 <body>
 
-<div class="header">
-<img src="https://raw.githubusercontent.com/BTPCFA36/hub3eassets/main/assets/images/header.jpg">
-</div>
+<div class="page">
 
-<div class="container">
+    <div class="header">
 
-<div class="card">
+        <img src="https://raw.githubusercontent.com/BTPCFA36/hub3eassets/main/assets/images/header.jpg">
 
-<div class="title">
-Ouverture de NetYpareo
-</div>
+    </div>
 
-<div class="subtitle">
-Vous allez être redirigé vers la plateforme.
-</div>
+    <div class="main">
 
-<button class="button" onclick="openNetYpareo()">
-Ouvrir NetYpareo
-</button>
+        <div class="container">
 
-<div class="footer">
-BTP CFA Centre-Val de Loire
-</div>
+            <div class="card">
 
-</div>
+                <div class="title">
+
+                    Ouverture de NetYpareo
+
+                </div>
+
+                <div class="subtitle">
+
+                    Vous allez être redirigé vers la plateforme.
+
+                </div>
+
+                <button class="button" onclick="openNetYpareo()">
+
+                    Ouvrir NetYpareo
+
+                </button>
+
+                <div class="footer">
+
+                    BTP CFA Centre-Val de Loire
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
 </body>
+
 </html>
