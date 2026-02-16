@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Ouverture NetYpareo</title>
+
+  <script>
+    function openExternal() {
+      const url = "https://btpcfa-cvdl.ymag.cloud/";
+
+      // Méthode principale
+      const win = window.open(url, "_blank");
+
+      // Fallback si popup bloquée
+      if (!win) {
+        window.location.href = url;
+      }
+    }
+
+    // Auto ouverture
+    window.onload = openExternal;
+  </script>
+
+  <style>
+    body {
+      font-family: Segoe UI, Arial, sans-serif;
+      text-align: center;
+      padding-top: 40px;
+      background-color: #f3f2f1;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+<body>
+
+  <h2>Ouverture de NetYpareo…</h2>
+
+  <p>Si rien ne se passe, cliquez ci-dessous :</p>
+
+  <button onclick="openExternal()">
+    Ouvrir NetYpareo
+  </button>
+
+</body>
+</html>
